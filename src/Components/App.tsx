@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <p className="text-2xl font-bold">{title}</p>
+        <p className="text-center text-2xl font-bold md:text-start">{title}</p>
         <PDFDownloadLink document={pdfDoc} fileName={fileName}>
           {({ loading }) => (
             <button>{loading ? 'Generazione...' : 'Scarica CV in PDF'}</button>
