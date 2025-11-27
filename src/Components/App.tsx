@@ -1,4 +1,5 @@
 import {
+  BlobProvider,
   Document,
   Page,
   PDFDownloadLink,
@@ -7,6 +8,7 @@ import {
 } from '@react-pdf/renderer'
 
 import { CV } from '@/Components'
+import { useIsTablet } from '@/hooks'
 
 const styles = StyleSheet.create({
   page: {
@@ -28,6 +30,25 @@ function App() {
   )
   const fileName = 'Curriculum_Vitae_Maurizio_Tolomeo.pdf'
   const title = 'Curriculum Vitae di Maurizio Tolomeo'
+  const isTablet = useIsTablet(1024)
+  const handleClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+  if (isTablet) {
+    return (
+      <BlobProvider document={pdfDoc}>
+        {({ url, loading }) =>
+          loading ? (
+            'Caricamento...'
+          ) : url ? (
+            <div className="my-10 flex w-full justify-center">
+              <button onClick={() => handleClick(url)}>Apri Preview PDF</button>
+            </div>
+          ) : null
+        }
+      </BlobProvider>
+    )
+  }
   return (
     <>
       <div className="container">
