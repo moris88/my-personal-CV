@@ -10,6 +10,8 @@ import {
 import { CV } from '@/Components'
 import { useIsTablet } from '@/hooks'
 
+import LabelBox, { LabelBoxContent, LabelBoxTitle } from './LabelBox'
+
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
@@ -36,17 +38,28 @@ function App() {
   }
   if (isTablet) {
     return (
-      <BlobProvider document={pdfDoc}>
-        {({ url, loading }) =>
-          loading ? (
-            'Caricamento...'
-          ) : url ? (
-            <div className="my-10 flex w-full justify-center">
-              <button onClick={() => handleClick(url)}>Apri Preview PDF</button>
-            </div>
-          ) : null
-        }
-      </BlobProvider>
+      <LabelBox className="px-5">
+        <LabelBoxTitle className="left-8">Anteprima del PDF</LabelBoxTitle>
+        <LabelBoxContent>
+          <BlobProvider document={pdfDoc}>
+            {({ url, loading }) =>
+              loading ? (
+                <div className="my-10 flex w-full justify-center">
+                  <span>Generazione anteprima...</span>
+                </div>
+              ) : url ? (
+                <div className="my-10 flex w-full flex-col items-center justify-center gap-4">
+                  <button onClick={() => handleClick(url)}>Apri Preview</button>
+                  <p>
+                    Clicca sul bottone per aprire l&apos;anteprima in una nuova
+                    scheda.
+                  </p>
+                </div>
+              ) : null
+            }
+          </BlobProvider>
+        </LabelBoxContent>
+      </LabelBox>
     )
   }
   return (
