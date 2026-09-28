@@ -42,6 +42,11 @@ const styles = StyleSheet.create({
     fontSize: 11,
     marginBottom: 2,
   },
+  privacyNotice: {
+    fontSize: 8,
+    color: '#666',
+    marginTop: 8,
+  },
   bulletItem: {
     flexDirection: 'row',
     marginBottom: 4,
@@ -205,21 +210,20 @@ function CV() {
         </View>
 
         <View style={styles.item}>
-          <Text style={styles.itemTitle}>Package Git Commit Helper IT</Text>
-          <Text style={styles.itemSubtitle}>Jun 2025 — Present</Text>
+          <Text style={styles.itemTitle}>Small Frontend Projects</Text>
+          <Text style={styles.itemSubtitle}>Jun 2026 — Present</Text>
           <Text style={styles.text}>
-            An open-source npm package to standardize and simplify Git commit
-            messages in Italian or English, following Conventional Commits
-            guidelines and semantic versioning, all powered by AI.
+            A collection of small personal frontend projects developed to
+            practice and improve skills.
           </Text>
-          <Link src="https://www.npmjs.com/package/git-commit-helper-it">
-            git-commit-helper-it
+          <Link src="https://mauriziotolomeo.it/projects">
+            Small Frontend Projects
           </Link>
         </View>
       </View>
 
       {/* Technical Skills */}
-      <View style={styles.section}>
+      <View break style={styles.section}>
         <Text style={styles.sectionTitle}>/&nbsp;Technical Skills</Text>
         <Text style={styles.text}>
           <Text style={{ fontWeight: 'bold' }}>Frontend:</Text> React,
@@ -227,7 +231,7 @@ function CV() {
         </Text>
         <Text style={styles.text}>
           <Text style={{ fontWeight: 'bold' }}>Testing:</Text> Playwright,
-          Vitest, Accessibility
+          Vitest, Accessibility, UX/UI Design
         </Text>
         <Text style={styles.text}>
           <Text style={{ fontWeight: 'bold' }}>Backend:</Text> Java, Python,
@@ -253,6 +257,12 @@ function CV() {
         <Text style={styles.sectionTitle}>/&nbsp;Languages</Text>
         <Text style={styles.text}>Italian (Native), English (B2)</Text>
       </View>
+
+      <Text style={styles.privacyNotice}>
+        I authorize the processing of my personal data contained in this CV for
+        recruitment purposes, in accordance with Regulation (EU) 2016/679 (GDPR)
+        and Legislative Decree No. 196/2003, as amended.
+      </Text>
     </>
   )
 }
