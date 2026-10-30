@@ -316,6 +316,24 @@ function CV() {
 					<Text style={styles.itemSubtitle}>
 						Anthropic · Oct 29, 2026 · Score: 868/1000
 					</Text>
+					<Link
+						style={styles.link}
+						src="https://www.credly.com/badges/83b5e306-6420-4375-9554-fda2637d786b/public_url"
+					>
+						View credential
+					</Link>
+				</View>
+				<View style={styles.item}>
+					<Text style={styles.itemTitle}>
+						Freshworks Certified App Developer – Foundations
+					</Text>
+					<Text style={styles.itemSubtitle}>Freshworks · Nov 2023</Text>
+					<Link
+						style={styles.link}
+						src="https://www.credly.com/badges/fb0d7ace-08ba-43f7-94a3-6bf89be944cc/public_url"
+					>
+						View credential
+					</Link>
 				</View>
 			</View>
 
