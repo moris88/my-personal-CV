@@ -1,1 +1,1 @@
-export { default as useIsTablet } from './useIsTablet'
+export { default as useIsTablet } from "./useIsTablet";

@@ -1,2 +1,2 @@
-export { default as App } from './App'
-export { default as CV } from './CV'
+export { default as App } from "./App";
+export { default as CV } from "./CV";
